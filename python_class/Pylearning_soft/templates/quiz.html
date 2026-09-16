@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}知识测验 · PY//BASE{% endblock %}
+{% block breadcrumb %}知识测验{% endblock %}
+{% block content %}
+<div class="page-heading">
+    <div><p class="eyebrow">KNOWLEDGE CHECK // ALL NODES</p><h1>知识测验</h1><p class="muted">用几分钟确认你已经掌握核心概念。</p></div>
+</div>
+{% if submitted %}
+<div class="score-banner {% if score == questions|length %}perfect{% endif %}"><div><span class="eyebrow">LATEST RESULT</span><strong>{{ score }}<small> / {{ questions|length }}</small></strong></div><div><p>{% if score == questions|length %}全部正确，基础节点已稳定。{% elif score > 0 %}不错，复盘错题后再试一次。{% else %}先回到课程节点复习，再来挑战。{% endif %}</p><a href="{% url 'quiz' %}" class="outline-button">重新测验</a></div></div>
+{% endif %}
+<form method="post" class="quiz-form">
+    {% csrf_token %}
+    {% for question in questions %}
+    <section class="question-card {% if submitted %}{% for item in feedback %}{% if item.question.id == question.id and item.correct %}correct{% elif item.question.id == question.id %}incorrect{% endif %}{% endfor %}{% endif %}">
+        <div class="question-number">Q{{ forloop.counter|stringformat:"02d" }} <span>{{ question.lesson.title }}</span></div>
+        <h2>{{ question.question }}</h2>
+        <div class="option-grid">
+            {% for key, value in question.options.items %}
+            <label class="option"><input type="radio" name="question_{{ question.id }}" value="{{ key }}" {% if submitted %}disabled{% endif %} required><span class="option-key">{{ key }}</span><span>{{ value }}</span></label>
+            {% endfor %}
+        </div>
+        {% if submitted %}
+            {% for item in feedback %}{% if item.question.id == question.id %}<div class="explanation">{% if item.correct %}✓ 回答正确{% else %}× 正确答案：{{ question.answer }}{% endif %} · {{ question.explanation }}</div>{% endif %}{% endfor %}
+        {% endif %}
+    </section>
+    {% empty %}<div class="empty-state">暂无测验题目。</div>{% endfor %}
+    {% if not submitted and questions %}<button type="submit" class="primary-button quiz-submit">提交答案 <span>→</span></button>{% endif %}
+</form>
+{% endblock %}

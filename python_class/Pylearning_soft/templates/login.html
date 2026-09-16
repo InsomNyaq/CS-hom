@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}登录 · PY//BASE{% endblock %}
+{% block auth_content %}
+<main class="login-page">
+    <div class="login-grid">
+        <div class="login-intro">
+            <div class="brand brand-large"><span class="brand-mark">Py</span><span><strong>PY//BASE</strong><small>LEARNING OS</small></span></div>
+            <p class="eyebrow">PYTHON FUNDAMENTALS // 01</p>
+            <h1>把代码，<br><em>变成能力。</em></h1>
+            <p class="intro-copy">一套面向初学者的 Python 学习工作台。用清晰的知识节点、即时反馈和可追踪的进度，建立你的编程底层思维。</p>
+            <div class="signal-row"><span class="signal-line"></span><span>LEARN · BUILD · ITERATE</span></div>
+        </div>
+        <div class="login-panel">
+            <div class="panel-kicker">SECURE ACCESS <span>●</span></div>
+            <h2>欢迎回来</h2>
+            <p class="muted">输入你的学习节点凭证以继续。</p>
+            <form method="post" class="login-form">
+                {% csrf_token %}
+                <label for="username">账号 <span>USERNAME</span></label>
+                <input id="username" name="username" type="text" autocomplete="username" placeholder="输入账号" required autofocus>
+                <label for="password">密码 <span>PASSWORD</span></label>
+                <input id="password" name="password" type="password" autocomplete="current-password" placeholder="输入密码" required>
+                {% if messages %}
+                    {% for message in messages %}<div class="form-error">{{ message }}</div>{% endfor %}
+                {% endif %}
+                <button class="primary-button" type="submit">进入学习空间 <span>→</span></button>
+            </form>
+            <div class="login-hint">LOCAL NODE · ACCESS CONTROLLED</div>
+        </div>
+    </div>
+</main>
+{% endblock %}

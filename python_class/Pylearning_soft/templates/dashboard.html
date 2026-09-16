@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}学习概览 · PY//BASE{% endblock %}
+{% block breadcrumb %}学习概览{% endblock %}
+{% block content %}
+<div class="page-heading">
+    <div>
+        <p class="eyebrow">DASHBOARD // {{ request.user.username|upper }}</p>
+        <h1>学习概览</h1>
+        <p class="muted">欢迎回到你的 Python 学习节点，继续保持探索。</p>
+    </div>
+    <a href="{% url 'lesson_list' %}" class="outline-button">查看全部课程 <span>↗</span></a>
+</div>
+
+<div class="stats-grid">
+    <div class="stat-card accent-card"><span class="stat-label">总体进度</span><strong>{{ percent }}<small>%</small></strong><span class="stat-meta">{{ completed_count }}/{{ total_count }} 个课程节点</span></div>
+    <div class="stat-card"><span class="stat-label">学习路径</span><strong>{{ total_count }}</strong><span class="stat-meta">个核心知识模块</span></div>
+    <div class="stat-card"><span class="stat-label">系统状态</span><strong class="online-text">在线</strong><span class="stat-meta"><i class="status-dot"></i>学习引擎正常</span></div>
+</div>
+
+<div class="dashboard-grid">
+    <section class="section-block">
+        <div class="section-title"><h2>继续学习</h2><span class="section-code">NEXT_NODE</span></div>
+        {% if next_lesson %}
+        <a class="next-lesson" href="{% url 'lesson_detail' next_lesson.slug %}">
+            <div class="next-number">{{ next_lesson.order|stringformat:"02d" }}</div>
+            <div class="next-copy"><span class="tag">{{ next_lesson.level }}</span><h3>{{ next_lesson.title }}</h3><p>{{ next_lesson.summary }}</p><span class="lesson-meta">{{ next_lesson.duration }} MIN · 课程节点 {{ next_lesson.order }}</span></div>
+            <span class="arrow-circle">→</span>
+        </a>
+        {% else %}
+        <div class="empty-state">所有课程节点已完成，去知识测验检验一下吧。</div>
+        {% endif %}
+    </section>
+    <section class="section-block">
+        <div class="section-title"><h2>路径进度</h2><span class="section-code">TRACK_01</span></div>
+        <div class="progress-ring-wrap">
+            <div class="progress-ring" style="--progress: {{ percent }}%"><div><strong>{{ percent }}%</strong><small>COMPLETE</small></div></div>
+            <div class="progress-copy"><strong>{{ completed_count }} <span>/ {{ total_count }}</span></strong><p>课程已完成</p><div class="mini-bar"><i style="width:{{ percent }}%"></i></div></div>
+        </div>
+        <a href="{% url 'quiz' %}" class="text-link">开始知识测验 <span>→</span></a>
+    </section>
+</div>
+
+<section class="section-block course-overview">
+    <div class="section-title"><h2>课程节点</h2><a href="{% url 'lesson_list' %}" class="text-link">全部课程 <span>→</span></a></div>
+    <div class="course-list">
+        {% for lesson in lessons %}
+        <a href="{% url 'lesson_detail' lesson.slug %}" class="course-row">
+            <span class="course-index">{{ lesson.order|stringformat:"02d" }}</span><span class="course-info"><strong>{{ lesson.title }}</strong><small>{{ lesson.summary }}</small></span><span class="tag">{{ lesson.level }}</span><span class="course-time">{{ lesson.duration }} min</span><span class="course-state {% if lesson.id in completed_ids %}done{% endif %}">{% if lesson.id in completed_ids %}✓{% else %}○{% endif %}</span>
+        </a>
+        {% empty %}<div class="empty-state">暂无课程，请前往后台添加课程。</div>{% endfor %}
+    </div>
+</section>
+{% endblock %}

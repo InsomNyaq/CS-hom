@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}课程节点 · PY//BASE{% endblock %}
+{% block breadcrumb %}课程节点{% endblock %}
+{% block content %}
+<div class="page-heading">
+    <div><p class="eyebrow">CURRICULUM // CORE PATH</p><h1>课程节点</h1><p class="muted">从语法基座出发，逐步构建 Python 思维。</p></div>
+</div>
+<div class="filter-row">
+    <span class="filter-label">FILTER</span>
+    <a href="{% url 'lesson_list' %}" class="filter-chip {% if not active_level %}selected{% endif %}">全部</a>
+    <a href="?level=入门" class="filter-chip {% if active_level == '入门' %}selected{% endif %}">入门</a>
+    <a href="?level=基础" class="filter-chip {% if active_level == '基础' %}selected{% endif %}">基础</a>
+    <a href="?level=进阶" class="filter-chip {% if active_level == '进阶' %}selected{% endif %}">进阶</a>
+</div>
+<div class="lesson-grid">
+    {% for lesson in lessons %}
+    <a href="{% url 'lesson_detail' lesson.slug %}" class="lesson-card">
+        <div class="lesson-card-top"><span class="lesson-index">{{ lesson.order|stringformat:"02d" }}</span><span class="lesson-status {% if lesson.id in completed_ids %}done{% endif %}">{% if lesson.id in completed_ids %}COMPLETED{% else %}READY{% endif %}</span></div>
+        <div class="lesson-card-body"><span class="tag">{{ lesson.level }}</span><h2>{{ lesson.title }}</h2><p>{{ lesson.summary }}</p></div>
+        <div class="lesson-card-footer"><span>{{ lesson.duration }} min read</span><span>OPEN NODE →</span></div>
+    </a>
+    {% empty %}<div class="empty-state">没有匹配的课程节点。</div>{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,5 @@
+In complex equipment fault diagnosis, traditional deep learning based fault diagnosis methods usually require special design and training of one model for one scenario, the features of different fault categories overlap seriously, making misdiagnosis easy to occur.
+The multimodal large language model mm llm demonstrates strong multimodal understanding and logical reasoning abilities.
+This article attempts to use mm llm for complex equipment fault diagnosis to yield higher diagnostic accuracy.
+However, existing mm llms lack domain specific knowledge and modal alignment training for engineering time series data, limiting their effectiveness in industrial fault diagnosis tasks.
+For test, we introduced some nums 7, 89, 22.

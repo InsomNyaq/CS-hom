@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}{{ lesson.title }} · PY//BASE{% endblock %}
+{% block breadcrumb %}<a href="{% url 'lesson_list' %}">课程节点</a> <i>/</i> {{ lesson.title }}{% endblock %}
+{% block content %}
+<div class="lesson-detail-head">
+    <div><p class="eyebrow">NODE {{ lesson.order|stringformat:"02d" }} // {{ lesson.level|upper }}</p><h1>{{ lesson.title }}</h1><p class="detail-summary">{{ lesson.summary }}</p></div>
+    <div class="detail-meta"><span>{{ lesson.duration }} MIN</span><span class="{% if completed %}completed-label{% endif %}">{% if completed %}✓ 已完成{% else %}● 学习中{% endif %}</span></div>
+</div>
+<div class="detail-layout">
+    <article class="lesson-content">
+        <div class="content-label">CONCEPT</div>
+        <p>{{ lesson.content }}</p>
+        <div class="content-label code-label">CODE SAMPLE <button class="copy-button" data-copy-target="lesson-code">复制代码</button></div>
+        <div class="code-window"><div class="code-window-bar"><span><i></i><i></i><i></i></span><small>lesson_{{ lesson.order }}.py</small><span></span></div><pre id="lesson-code"><code>{{ lesson.code }}</code></pre></div>
+        <div class="output-window"><span class="output-label">OUTPUT</span><pre>{{ lesson.output }}</pre></div>
+        {% if questions %}
+        <div class="content-label">QUICK CHECK</div>
+        <div class="quick-check"><strong>{{ questions|length }} 道随堂题</strong><span>去知识测验完成全量检测 →</span><a href="{% url 'quiz' %}" class="text-link">开始测验</a></div>
+        {% endif %}
+    </article>
+    <aside class="lesson-side">
+        <div class="side-card">
+            <span class="side-label">NODE STATUS</span><div class="big-status {% if completed %}success{% endif %}">{% if completed %}COMPLETED{% else %}IN PROGRESS{% endif %}</div>
+            <div class="side-divider"></div><span class="side-label">LEARNING TIME</span><strong class="side-number">{{ lesson.duration }}<small>MIN</small></strong>
+            {% if not completed %}<button class="primary-button complete-button" data-complete-url="{% url 'complete_lesson' lesson.slug %}">标记为已完成 <span>✓</span></button>{% else %}<div class="completed-note">该课程节点已写入学习记录。</div>{% endif %}
+        </div>
+        <a href="{% url 'lesson_list' %}" class="back-link">← 返回课程列表</a>
+    </aside>
+</div>
+{% endblock %}

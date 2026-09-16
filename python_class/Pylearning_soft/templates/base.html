@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Python 基础学习{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+</head>
+<body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    {% if request.user.is_authenticated %}
+    <div class="app-shell">
+        <aside class="sidebar">
+            <a href="{% url 'dashboard' %}" class="brand">
+                <span class="brand-mark">Py</span>
+                <span>
+                    <strong>PY//BASE</strong>
+                    <small>LEARNING OS</small>
+                </span>
+            </a>
+            <nav class="nav">
+                <a href="{% url 'dashboard' %}" class="{% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}">
+                    <span class="nav-icon">⌂</span>学习概览
+                </a>
+                <a href="{% url 'lesson_list' %}" class="{% if request.resolver_match.url_name == 'lesson_list' or request.resolver_match.url_name == 'lesson_detail' %}active{% endif %}">
+                    <span class="nav-icon">▦</span>课程节点
+                </a>
+                <a href="{% url 'quiz' %}" class="{% if request.resolver_match.url_name == 'quiz' %}active{% endif %}">
+                    <span class="nav-icon">✓</span>知识测验
+                </a>
+            </nav>
+            <div class="sidebar-status">
+                <span class="status-dot"></span>
+                <div><strong>SYSTEM ONLINE</strong><small>学习引擎运行中</small></div>
+            </div>
+            <div class="sidebar-footer">BUILD 2026.09 · LOCAL NODE</div>
+        </aside>
+        <main class="main-area">
+            <header class="topbar">
+                <div class="breadcrumb"><span>PY//BASE</span><i>/</i>{% block breadcrumb %}学习概览{% endblock %}</div>
+                <div class="user-menu">
+                    <span class="user-badge">{{ request.user.username|slice:":1"|upper }}</span>
+                    <span class="user-name">{{ request.user.username }}</span>
+                    <a href="{% url 'logout' %}" class="logout-link">退出</a>
+                </div>
+            </header>
+            {% if messages %}
+                {% for message in messages %}
+                <div class="flash {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+            <section class="page-content">
+                {% block content %}{% endblock %}
+            </section>
+        </main>
+    </div>
+    {% else %}
+        {% block auth_content %}{% endblock %}
+    {% endif %}
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>
