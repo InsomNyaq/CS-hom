@@ -1,0 +1,4 @@
+git add CS61a
+git status (to watch what have changed )
+git commit -m "description in modification"
+git push
