@@ -19,6 +19,7 @@ def student_entry(students)->list:
 
     stu_entry = {"student":(id_entry,student_name),"scores": {"语文":chinese, "数学":math, "英语":english}}
     students.append(stu_entry)
+    return students
 
 def search(students)->list:
     '''search for student info by student id'''
@@ -68,15 +69,15 @@ def scores_static(students)->list:
 
         avg_score = sum(scores)/len(students)
         best_student = max(students, key = lambda student: student["scores"][course])
-        worest_student = min(students, key = lambda student: student["scores"][course])
+        worst_student = min(students, key = lambda student: student["scores"][course])
 
         print(f"\n{course} 平均分：{avg_score}\n")
         print(f"最高分: {max_score}\n"
               f"学号: {best_student["student"][0]}\n")
 
         print(f"最高分: {min_score}\n"
-              f"学号: {worest_student["student"][0]}\n"
-              f"姓名: {worest_student["scores"]["course"]}\n")
+              f"学号: {worst_student["student"][0]}\n"
+              f"姓名: {worst_student["scores"]["course"]}\n")
 
 def fail_warning(students):
     '''Output students who are fail the course'''
@@ -96,6 +97,12 @@ def fail_warning(students):
 def grade_classification(students)->list:
     a_count, b_count, c_count, d_count = 0, 0, 0, 0
     courses = ["语文", "数学", "英语"]
+    grade_student = {
+        "A":[],
+        "B":[],
+        "C":[],
+        "D":[]
+    }
 
     choice = input("输入你想按照哪门课程给学生排序(语文,数学,英语): ")
     if choice not in courses:
@@ -104,5 +111,20 @@ def grade_classification(students)->list:
     
     for student in students:
         student_score = student["scores"][choice]
-        
+        student_name  = student["student"][1]
 
+        if student_score >= 90:
+            grade_student["A"].append(student_name)
+            a_count +=1
+        elif student_score >= 80:
+            grade_student["B"].append(student_name)
+            b_count +=1
+        elif student_score >= 60:
+            grade_student["C"].append(student_name)
+            c_count +=1
+        else:
+            grade_student["D"].append(student_name)
+            d_count +=1
+
+    count = (a_count,b_count,c_count,d_count)
+    return grade_student, count
