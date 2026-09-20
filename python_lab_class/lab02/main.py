@@ -13,7 +13,7 @@ def main():
                 student = ast.literal_eval(line)
                 students.append(student)
 
-    print(students)
+
 
 
 

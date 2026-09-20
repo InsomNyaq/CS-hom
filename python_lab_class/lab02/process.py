@@ -95,7 +95,14 @@ def fail_warning(students):
 
 def grade_classification(students)->list:
     a_count, b_count, c_count, d_count = 0, 0, 0, 0
+    courses = ["语文", "数学", "英语"]
 
+    choice = input("输入你想按照哪门课程给学生排序(语文,数学,英语): ")
+    if choice not in courses:
+        print("输入的课程不在选择之中")
+        return
+    
     for student in students:
-        student_score = student["scores"][course]
+        student_score = student["scores"][choice]
+        
 
