@@ -56,7 +56,6 @@ def student_sorted(students, reverse=True)->list:
     return sorted_students
 
 
-
 def scores_static(students)->list:
     '''Extract the average scores of the courses 
     and output students'name of both the max and min scores in each course'''
@@ -128,3 +127,17 @@ def grade_classification(students)->list:
 
     count = (a_count,b_count,c_count,d_count)
     return grade_student, count
+
+
+def print_choice():
+    print("请选择你想要进行的操作并输入对应的序号：\n")
+    print("1. 添加学生信息")
+    print("2. 查询学生信息")
+    print("3. 按总分排序输出学生信息")
+    print("4. 输出各科平均分及最高分和最低分的学生信息")
+    print("5. 输出任意课程不及格的学生信息")
+    print("6. 按照成绩等级分类输出学生信息")
+    print("q. 退出程序\n")
+
+
+    

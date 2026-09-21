@@ -13,6 +13,11 @@ def main():
                 student = ast.literal_eval(line)
                 students.append(student)
 
+    print("请选择你想要进行的操作并输入对应的序号：\n")
+    print_choice()
+    user_choice = input()
+    while(user_choice != 'q'):
+        if user_choice == ''
 
 
 
