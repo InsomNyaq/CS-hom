@@ -1,7 +1,7 @@
 """Typing test implementation"""
 
-from utils import lower, split, remove_punctuation, lines_from_file
-from ucb import main, interact, trace
+from CS61a.project.project2.cats.utils import lower, split, remove_punctuation, lines_from_file
+from CS61a.project.project2.cats.ucb import main, interact, trace
 from datetime import datetime
 
 

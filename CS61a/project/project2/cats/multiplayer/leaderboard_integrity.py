@@ -7,7 +7,7 @@ from functools import wraps
 from queue import Queue
 from threading import Thread
 
-import cats
+import CS61a.project.project2.cats.cats as cats
 
 fernet = None
 

@@ -2,7 +2,7 @@
 # Optional: Adding a User Interface #
 #####################################
 
-from hog import *
+from CS61a.project.project1.hog.hog import *
 
 ########################
 # Printing game events #

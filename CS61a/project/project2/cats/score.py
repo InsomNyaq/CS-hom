@@ -1,4 +1,4 @@
-import cats
+import CS61a.project.project2.cats.cats as cats
 import pickle
 import time
 import random

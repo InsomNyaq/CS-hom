@@ -1,7 +1,7 @@
 """The Game of Hog."""
 
-from dice import six_sided, make_test_dice
-from ucb import main, trace, interact
+from CS61a.project.project1.hog.dice import six_sided, make_test_dice
+from CS61a.project.project1.hog.ucb import main, trace, interact
 
 GOAL = 100  # The goal of Hog is to score 100 points.
 

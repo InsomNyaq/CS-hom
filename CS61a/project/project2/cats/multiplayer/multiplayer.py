@@ -3,7 +3,7 @@ from collections import namedtuple, defaultdict
 from datetime import datetime, timedelta
 from random import randrange
 
-import cats
+import CS61a.project.project2.cats.cats as cats
 from gui_files.common_server import route, forward_to_server, server_only
 from .leaderboard_integrity import (
     get_authorized_limit,
@@ -84,7 +84,7 @@ def create_multiplayer_server():
             and len(State.queue) >= MIN_PLAYERS
         ):
             # start game!
-            import cats_gui
+            import CS61a.project.project2.cats.cats_gui as cats_gui
 
             curr_text = cats_gui.request_paragraph()
             game_id = cats_gui.request_id()
