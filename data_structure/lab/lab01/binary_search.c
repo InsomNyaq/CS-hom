@@ -5,7 +5,7 @@
 bool check_sort(int a[], int n){
     for(int i=0; i<n-1; i++){
         if (a[i] >= a[i+1]){
-            printf("Invalid Value");
+            printf("Invalid Value\n");
             return false;
         }
     }
@@ -18,28 +18,28 @@ void Print_process(int left, int right, int mid){
 int main(){
     int n, x;
     if (scanf("%d", &n) != 1) {
-    return 1;
+    return 0;
     }
 
     if (scanf("%d", &x) != 1) {
-        return 1;
+        return 0;
     }
 
     if (n <= 0) {
-        return 1;
+        return 0;
     }
 
     int array[n];
 
     for (int i = 0; i < n; i++) {
         if (scanf("%d", &array[i]) != 1) {
-            return 1;
+            return 0;
         }
     }
 
     if(!check_sort(array, n))
     {
-        return 1;
+        return 0;
     }
     
 
@@ -50,7 +50,7 @@ int main(){
         int mid = (left + right) / 2;
         Print_process(left, right, mid);
         if(array[mid] == x){
-            printf("%d",mid);
+            printf("%d\n",mid);
             found = true;
             break;
         }
@@ -63,7 +63,7 @@ int main(){
         }
     }
     if (!found){
-        printf("Not Found");
+        printf("Not Found\n");
     }
     return 0;
 }

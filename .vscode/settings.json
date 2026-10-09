@@ -1,0 +1,10 @@
+{
+    "c-cpp-compile-run.c-compiler": "/usr/bin/clang",
+    "c-cpp-compile-run.c-flags": "-std=c17 -Wall -Wextra -g3 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk",
+    "c-cpp-compile-run.cpp-compiler": "/usr/bin/clang++",
+    "c-cpp-compile-run.cpp-flags": "-std=c++14 -Wall -Wextra -g3 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk",
+    "cph.language.c.Command": "/usr/bin/clang",
+    "cph.language.c.Args": "-std=c17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk",
+    "cph.language.cpp.Command": "/usr/bin/clang++",
+    "cph.language.cpp.Args": "-std=c++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk"
+}
