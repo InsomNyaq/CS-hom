@@ -8,6 +8,7 @@
 - `python_class/`：Python 课程学习内容与课程项目
 - `python_lab_class/`：Python 实验课程内容
 - `summer2026/`：2026 年暑期课程练习
+- `data_structure/`: data structure class(lab and self-learning) 
 
 ## 说明
 
