@@ -1,10 +1,10 @@
 {
-    "c-cpp-compile-run.c-compiler": "/opt/homebrew/bin/gcc-16",
-    "c-cpp-compile-run.c-flags": "-std=c17 -Wall -Wextra -g3",
-    "c-cpp-compile-run.cpp-compiler": "/opt/homebrew/bin/g++-16",
-    "c-cpp-compile-run.cpp-flags": "-std=c++14 -Wall -Wextra -g3",
-    "cph.language.c.Command": "/opt/homebrew/bin/gcc-16",
-    "cph.language.c.Args": "-std=c17",
-    "cph.language.cpp.Command": "/opt/homebrew/bin/g++-16",
-    "cph.language.cpp.Args": "-std=c++14"
+    "c-cpp-compile-run.c-compiler": "/usr/bin/clang",
+    "c-cpp-compile-run.c-flags": "-std=c17 -Wall -Wextra -g3 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk",
+    "c-cpp-compile-run.cpp-compiler": "/usr/bin/clang++",
+    "c-cpp-compile-run.cpp-flags": "-std=c++14 -Wall -Wextra -g3 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk",
+    "cph.language.c.Command": "C:/mingw64/bin/gcc.exe",
+    "cph.language.c.Args": "-std=c17 -Wall -Wextra",
+    "cph.language.cpp.Command": "C:/mingw64/bin/g++.exe",
+    "cph.language.cpp.Args": "-std=c++14 -Wall -Wextra"
 }
