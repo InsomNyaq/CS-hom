@@ -1,0 +1,2 @@
+P008 kind=blip cx=4626610 cy=3847465 text=''
+P089 kind=txbx cx=5194300 cy=434975 text=''

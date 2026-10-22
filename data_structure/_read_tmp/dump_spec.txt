@@ -1,0 +1,462 @@
+FILE: D:\CS-hom\data_structure\_read_tmp\spec.docx
+title='《数据结构》课程实习' subject='' author='MengYingJie'
+=== SECTIONS ===
+section 0: page 6552565 x 9253220, margins L720090 R720090 T900430 B720090
+=== BODY ===
+P001 [align=CENTER (1)] 《数据结构》 实验题目
+P002 [-] 以下实验题目，要求完成实验内容的全部基本部分（不含选做内容部分），对于学有余力的同学，可以继续完成选做内容部分。
+P003 [style=Heading 1] 序言：刷题操作过程
+P004 [style=Heading 2] 0.1 刷“浙江大学数据结构慕课”课程作业
+P005 [style=Normal (Web)] 首先快去拼题A（）系统注册一个账号，点你自己的用户名，进入“个人中心”，做两件重要的事情：
+P006 [style=Normal (Web)] 在百度搜索栏中输入“中国大学慕课 浙江大学 数据结构”，点击下图第一个链接：
+P007 [style=Normal (Web)] 打开的页面点击“立即参加”，在公告页面将有“本学期的邀请码为：”，复制后面的邀请码
+P008 [style=Normal (Web)] 点击右上角用户名，出来的下拉列表选个人中心，点击“应邀做题”，输入邀请码。点击“接受邀请”，就可以刷浙江大学慕课相应的课后编程作业啦~
+P009 [style=Normal (Web)] 以后都从拼题A的首页点“进入题库”，在《》这个题目集中完成作业。
+P010 [style=Heading 2] 0.2 刷兰州大学数据结构课程组布置的作业
+P011 [style=Normal (Web)] 拼题A网址：https://pintia.cn，学生自行注册账号
+P012 [style=Normal (Web)] 个人中心（点击右上角头像昵称可进入）“我的绑定”通过教学班绑定码绑定校园帐号，才可以看到作业，通过访问分享链接和二维码可直接跳转到绑定页面。
+P013 [style=Heading 1] 一、热身实验（学时：4）
+P014 [style=Heading 2] 1.1 二分查找法之过程（15分 2学时）
+P015 [align=LEFT (0)] 题目描述
+P016 [align=LEFT (0)] 本题要求使用二分查找法，在给定的n个升序排列的整数中查找x，并输出查找过程中每一步的中间结果。如果数组a中的元素与x的值相同，输出相应的下标（下标从0开始）；如果没有找到，输出“Not Found”。如果输入的n个整数没有按照从小到大的顺序排列，或者出现了相同的数，则输出“Invalid Value”。
+P017 [align=LEFT (0)] 二分查找法的算法步骤描述如下：
+P018 [align=LEFT (0)] 设n个元素的数组a已升序排列，用left和right两个变量来表示查找的区间，即在a[left] 〜 a[right]区间去查找x。初始状态为left = 0，right = n-1。首先用要查找的x与查找区间的中间位置元素a[mid]（mid = (left + right) / 2）比较，如果相等则找到；如果x < a[mid]，由于数组是升序排列的，则只要在a[left] 〜 a[mid-1]区间继续查找；如果x > a[mid]，则只要在a[mid+1] 〜 a[right]区间继续查找。也就是根据与中间元素比较的情况产生了新的区间值left、right值，当出现left > right时，说明不存在值为x的元素。
+P019 [align=LEFT (0)] 输入格式：
+P020 [align=LEFT (0)] 输入在第1行中给出一个正整数n（1≤n≤10）和一个整数x，第2行输入n个整数，其间以空格分隔。题目保证数据不超过长整型整数的范围。
+P021 [align=LEFT (0)] 输出格式：
+P022 [align=LEFT (0)] 在每一行中输出查找过程中对应步骤的中间结果，按照“[left,right][mid]”的格式输出。提示：相邻数字、符号之间没有空格。
+P023 [align=LEFT (0)] 如果找到，输出相应的下标（下标从0开始）；如果没有找到，在一行中输出“Not Found”。
+P024 [align=LEFT (0)] 如果输入的n个整数没有按照从小到大的顺序排列，或者出现了相同的数，则输出“Invalid Value”。
+P025 [align=LEFT (0)] 输入样例1：
+P026 [align=LEFT (0)] 10 2
+P027 [align=LEFT (0)] 1 2 3 4 5 6 7 8 9 10
+P028 [align=LEFT (0)] 输出样例1：
+P029 [align=LEFT (0)] [0,9][4]
+P030 [align=LEFT (0)] [0,3][1]
+P031 [align=LEFT (0)] 1
+P032 [align=LEFT (0)] 输入样例2：
+P033 [align=LEFT (0)] 4 5
+P034 [align=LEFT (0)] 71 74 78 100
+P035 [align=LEFT (0)] 输出样例2：
+P036 [align=LEFT (0)] [0,3][1]
+P037 [align=LEFT (0)] [0,0][0]
+P038 [align=LEFT (0)] Not Found
+P039 [align=LEFT (0)] 输入样例3：
+P040 [align=LEFT (0)] 5 5
+P041 [align=LEFT (0)] 39 60 80 80 100
+P042 [align=LEFT (0)] 输出样例3：
+P043 [align=LEFT (0)] Invalid Value
+P044 [style=Heading 2] 1.2数组元素循环右移问题（20分 2学时）
+P045 [style=Heading 1] 二、线性表的操作（学时：8）
+P046 [-] 基本内容：
+P047 [-] 本实验分两次共8个学时，
+P048 [-] 第一次实验题目4学时，题目包括2.1，2.2和2.3，实验目标为：比较用数组和链接结构组织线性表的优缺点，要求深刻理解指针概念，熟练掌握指针的相关操作；
+P049 [-] 第二次实验题目4学时，题目包括2.4，2.5，实验目标为：分别用数组（选做）和单向链表表示集合，完成集合的并、交运算。
+P050 [-] 选作内容:
+P051 [align=LEFT (0)] (1)集合的元素判定和子集判定运算。(2)求集合的补集。(3)集合的混合运算表达式求值。(4)集合的元素类型推广到其他类型，甚至任意类型。
+P052 [style=Heading 2] 2.1 有序数组（输入）的插入（15分  1学时）
+P053 [align=LEFT (0)] 向一个有序数组a中插入一个数据，使其依然保持有序性。如数组a={1,3,5,7,9}，插入4后的a是{1,3,4,5,7,9}。 
+P054 [align=LEFT (0)] 【提示】
+P055 [align=LEFT (0)] 用户输入一个数值后，从数组最后一个值开始判断，如果输入值小于数组元素，则数组元素值复制到后一个位置（输入值至少要放到数组元素的前面），直到不满足条件为止（数组已到头部，或者输入值大于等于数组元素值），将输入值赋值到该位置。注意数组a要有足够空间。
+P056 [align=LEFT (0)] 输入格式:
+P057 [align=LEFT (0)] 第一行输入一个整数n
+P058 [align=LEFT (0)] 第二行输入n个整数，已由小到大排序，保存到数组a中
+P059 [align=LEFT (0)] 第三行输入一个整数key
+P060 [align=LEFT (0)] 输出格式:
+P061 [align=LEFT (0)] 输出数组的所有元素，用空格分隔
+P062 [align=LEFT (0)] 输入样例1:
+P063 [align=LEFT (0)] 5
+P064 [align=LEFT (0)] 1 3 5 7 9
+P065 [align=LEFT (0)] 4
+P066 [align=LEFT (0)] 输出样例1:
+P067 [align=LEFT (0)]  1 3 4 5 7 9
+P068 [align=LEFT (0)] 输入样例2:
+P069 [align=LEFT (0)] 5
+P070 [align=LEFT (0)] 1 3 5 7 9
+P071 [align=LEFT (0)] 10
+P072 [align=LEFT (0)] 输出样例2:
+P073 [align=LEFT (0)]  1 3 5 7 9 10
+P074 [style=Heading 2] 2.2 有序链表的插入（20分 1学时）
+P075 [-] 已知一个递增有序链表L（带头结点，元素为整数），编写程序将一个新整数插入到L中，并保持L的有序性。
+P076 [-] 其中单链表的类型定义参考如下：
+P077 [-] typedef  int  elementType;
+P078 [-] typedef  struct  lnode 
+P079 [-] {  elementType  data;     
+P080 [-]    struct  lnode  *next; 
+P081 [-] }Lnode,* LinkList;
+P082 [-] 输入格式:
+P083 [-] 输入分三行
+P084 [-] 第一行  元素个数
+P085 [-] 第二行  元素的值，元素间用空格分隔。
+P086 [-] 第三行  待插入的元素值
+P087 [-] 输出格式:
+P088 [-] 在一行中输出有序链表元素值，每个元素前输出一个空格以便与相邻元素分隔。
+P089 [-] 输入样例:
+P090 [-] 5
+P091 [-] 1 3 5 7 9
+P092 [-] 4
+P093 [-] 输出样例:
+P094 [-]  1 3 4 5 7 9
+P095 [style=Heading 2] 2.3 单链表逆置（10分 2学时）
+P096 [-] 将单链表倒置，要求只利用原表的存储空间。
+P097 [-] 原单链表如下所示：
+P098 [-] 倒置后的单链表应为：
+P099 [-] 输入格式:
+P100 [-] 第一行输入n的值，表示单链表的元素个数。
+P101 [-] 第二行输入n个整数值，作为单链表的各元素值。
+P102 [-] 输出格式:
+P103 [-] 输出倒置后的单链表的各元素值，各元素值之间用空格分隔。
+P104 [-] 输入样例1:
+P105 [-] 4
+P106 [-] 2 4 6 8 
+P107 [-] 输出样例1:
+P108 [-] 8 6 4 2 
+P109 [-] 输入样例2:
+P110 [-] 7
+P111 [-] 1 3 5 7 9 11 13 
+P112 [-] 输出样例2:
+P113 [-] 13 11 9 7 5 3 1
+P114 [style=Heading 2] 2.4 两个有序链表序列的合并（15分 2学时）
+P115 [-] 已知两个非降序链表序列S1与S2，设计函数构造出S1与S2合并后的新的非降序链表S3。
+P116 [-] 输入格式:
+P117 [-] 输入分两行，分别在每行给出由若干个正整数构成的非降序序列，用−1表示序列的结尾（−1不属于这个序列）。数字用空格间隔。
+P118 [-] 输出格式:
+P119 [-] 在一行中输出合并后新的非降序链表，数字间用空格分开，结尾不能有多余空格；若新链表为空，输出NULL。
+P120 [-] 输入样例:
+P121 [-] 1 3 5 -1
+P122 [-] 2 4 6 8 10 -1
+P123 [-] 输出样例:
+P124 [-] 1 2 3 4 5 6 8 10
+P125 [style=Heading 2] 2.5 两个有序链表序列的交集（20分 2学时）
+P126 [-] 已知两个非降序链表序列S1与S2，设计函数构造出S1与S2的交集新链表S3。
+P127 [-] 输入格式:
+P128 [-] 输入分两行，分别在每行给出由若干个正整数构成的非降序序列，用−1表示序列的结尾（−1不属于这个序列）。数字用空格间隔。
+P129 [-] 输出格式:
+P130 [-] 在一行中输出两个输入序列的交集序列，数字间用空格分开，结尾不能有多余空格；若新链表为空，输出NULL。
+P131 [-] 输入样例:
+P132 [-] 1 2 5 -1
+P133 [-] 2 4 5 8 10 -1
+P134 [-] 输出样例:
+P135 [-] 2 5
+P136 [style=Heading 1] 三、栈的操作（学时：8）
+P137 [-] 基本内容：
+P138 [-] 本实验分两次共8个学时，
+P139 [-] 第一次实验题目4学时，题目包括3.1，实验目标为：熟练掌握入栈和出栈基本操作；
+P140 [-] 第二次实验题目4学时，题目为3.2，实验目标为：掌握中缀表达式转换为后缀表达式原理。
+P141 [style=Heading 2] 3.1 Pop Sequence(25分 4学时)
+P142 [-] 判断出栈顺序是否正确
+P143 [style=Heading 2] 3.2 中缀表达式转换为后缀表达式并求值（100分 4学时）
+P144 [style=Heading 1] 四、字符串的操作（学时：4）
+P145 [-] 实验内容：文本单词统计
+P146 [-] 基本内容：
+P147 [-] 统计某篇英文小说中某些单词的出现次数和位置。英文小说存于一个文本文件中。待统计的词汇集合要一次输入完毕，即统计工作必须在程序的一次运行之后就全部完成。程序的输出结果是每个词的出现次数和出现位置所在行的行号，将输出结果保存在一个文本文件中。
+P148 [-] 测试数据：
+P149 [-] 以自己的源程序模拟英文小说，程序语言保留字集作为待统计的词汇集
+P150 [-] 实现提示：
+P151 [-] 设小说中的词汇一律不跨行。这样，每读入一行，就统计每个词在这行中的出现次数。出现位置所在行的行号可以用链表存储。若某行中出现了不止一次，不必存多个相同的行号。
+P152 [-] 注：本题目PTA无原题，只需提交到学习通即可
+P153 [style=Heading 1] 五、二叉树的操作（学时：12） 
+P154 [-] 基本内容：
+P155 [-] 本实验分四次共12个学时，
+P156 [-] 第一次实验4学时，题目为5.1，实验目标为：熟练掌握递归和非递归方法实现二叉树的前、中、后序及层次遍历方法；
+P157 [-] 第二次实验4学时，题目为5.2.1和5.2.2，实验目标为：掌握叶结点的性质；掌握二叉搜索树的中序遍历有序性特性。
+P158 [-] 第三次实验4学时，题目5.3，实验目标为：哈夫曼树的构造。
+P159 [-] 选作内容:
+P160 [align=LEFT (0)] 5.2.3 二叉搜索树的删除操作，实验目标为：用中序直接前驱或直接后继代替删除结点原理，以及怎么找直接前驱和直接后继。
+P161 [align=LEFT (0)] 5.4 完全二叉搜索树，实验目标为：理解完全二叉树结构和二叉搜索树结构特点，两者都满足能唯一确定一棵二叉树。
+P162 [style=Heading 2] 5.1 二叉树的遍历（4学时）
+P163 [align=LEFT (0)] 建立以左右孩子链接结构表示的二叉树，实现二叉树的先序、中序、后序的递归和非递归方式遍历，分层遍历、统计树的高度等。
+P164 [-] 注：本题目PTA无原题，只需提交到学习通即可
+P165 [style=Heading 2] 5.2 二叉树的应用（4学时）
+P166 [style=Heading 3] 5.2.1列出叶结点（25分）
+P167 [align=LEFT (0)] Given a tree, you are supposed to list all the leaves in the order of top down, and left to right.
+P168 [align=LEFT (0)] Input Specification:
+P169 [align=LEFT (0)] Each input file contains one test case.  For each case, the first line gives a positive integer N (≤10) which is the total number of nodes in the tree -- and hence the nodes are numbered from 0 to N−1.  Then N lines follow, each corresponds to a node, and gives the indices of the left and right children of the node.  If the child does not exist, a "-" will be put at the position.  Any pair of children are separated by a space.
+P170 [align=LEFT (0)] Output Specification:
+P171 [align=LEFT (0)] For each test case, print in one line all the leaves' indices in the order of top down, and left to right.  There must be exactly one space between any adjacent numbers, and no extra space at the end of the line.
+P172 [align=LEFT (0)] Sample Input:
+P173 [align=LEFT (0)] 8
+P174 [align=LEFT (0)] 1 -
+P175 [align=LEFT (0)] - -
+P176 [align=LEFT (0)] 0 -
+P177 [align=LEFT (0)] 2 7
+P178 [align=LEFT (0)] - -
+P179 [align=LEFT (0)] - -
+P180 [align=LEFT (0)] 5 -
+P181 [align=LEFT (0)] 4 6
+P182 [align=LEFT (0)] Sample Output:
+P183 [align=LEFT (0)] 4 1 5
+P184 [style=Heading 3] 5.2.2 这是二叉搜索树吗？（25分 ）
+P185 [-] 一棵二叉搜索树可被递归地定义为具有下列性质的二叉树：对于任一结点，
+P186 [-] 其左子树中所有结点的键值小于该结点的键值；
+P187 [-] 其右子树中所有结点的键值大于等于该结点的键值；
+P188 [-] 其左右子树都是二叉搜索树。
+P189 [-] 所谓二叉搜索树的“镜像”，即将所有结点的左右子树对换位置后所得到的树。
+P190 [-] 给定一个整数键值序列，现请你编写程序，判断这是否是对一棵二叉搜索树或其镜像进行前序遍历的结果。
+P191 [-] 输入格式：
+P192 [-] 输入的第一行给出正整数 N（≤1000）。随后一行给出 N 个整数键值，其间以空格分隔。
+P193 [-] 输出格式：
+P194 [-] 如果输入序列是对一棵二叉搜索树或其镜像进行前序遍历的结果，则首先在一行中输出 YES ，然后在下一行输出该树后序遍历的结果。数字间有 1 个空格，一行的首尾不得有多余空格。若答案是否，则输出 NO。
+P195 [-] 输入样例 1：
+P196 [-] 7
+P197 [-] 8 6 5 7 10 8 11
+P198 [-] 输出样例 1：
+P199 [-] YES
+P200 [-] 5 7 6 8 11 10 8
+P201 [-] 输入样例 2：
+P202 [-] 7
+P203 [-] 8 10 11 8 6 7 5
+P204 [-] 输出样例 2：
+P205 [-] YES
+P206 [-] 11 8 10 7 5 6 8
+P207 [-] 输入样例 3：
+P208 [-] 7
+P209 [-] 8 6 8 5 10 9 11
+P210 [-] 输出样例 3：
+P211 [-] NO
+P212 [style=Heading 3] 5.2.3 二叉搜索树的删除操作（25分 选做）
+P213 [-] 题目描述
+P214 [-] 给出一棵二叉搜索树（没有相同元素）, 请输出其删除部分元素之后的层序遍历序列。
+P215 [-] 删除结点的策略如下：
+P216 [-] 如果一个结点是叶子结点，则直接删除；
+P217 [-] 如果一个结点的左子树不为空, 则将该结点的值设置为其左子树上各结点中的最大值，并继续删除其左子树上拥有最大值的结点；
+P218 [-] 如果一个结点的左子树为空但右子树不为空，则将该结点的值设置为其右子树上各结点中的最小值，并继续删除其右子树上拥有最小值的结点。
+P219 [-] 输入格式:
+P220 [-] 每个输入文件包含一个测试用例。每个测试用例的第一行包含一个整数 N (0<N<=100)，表示二叉搜索树中结点的个数。
+P221 [-]  第二行给出该二叉搜索树的先序遍历序列，由 N 个整数构成，以一个空格分隔。第三行给出一个整数K (0<K<N)，表示待删除的结点个数。最后一行给出 K 个整数，表示待删除的各个结点上的值。必须按输入次序删除结点。题目保证结点一定能被删除。
+P222 [-] 输出格式:
+P223 [-] 在一行中输出删除结点后的层序遍历序列。序列中的数字以一个空格分隔，行末不得有多余空格。
+P224 [-] 输入样例:
+P225 [-] 7
+P226 [-] 4 2 1 3 6 5 7
+P227 [-] 2
+P228 [-] 3 6
+P229 [-] 输出样例:
+P230 [-] 4 2 5 1 7
+P231 [style=Heading 2] 5.3 构造哈夫曼树（20分 4学时）
+P232 [-] 输入一些单词及其出现的频度，必须先用数组构造一棵哈夫曼树，再输出哈夫曼编码的平均码长。
+P233 [-] 输入格式:
+P234 [-] 输入N，表示有N个单词，以下N行，每一行表示一个单词及其频度。
+P235 [-] 输出格式:
+P236 [-] 平均码长用浮点数类型表示，保留小数点后5位。
+P237 [-] 输入样例:
+P238 [-] 在这里给出一组输入。例如：
+P239 [-] 11
+P240 [-] The 1192
+P241 [-] of 677
+P242 [-] a 541
+P243 [-] to 518
+P244 [-] and 462
+P245 [-] that 242
+P246 [-] he 195
+P247 [-] is 190
+P248 [-] for 157
+P249 [-] His 138
+P250 [-] are 124
+P251 [-] 输出样例:
+P252 [-] 在这里给出相应的输出。例如：
+P253 [-] 3.10437
+P254 [style=Heading 2] 5.4 完全二叉搜索树（30分 选做 视频）
+P255 [-] A Binary Search Tree (BST) is recursively defined as a binary tree which has the following properties:
+P256 [-] The left subtree of a node contains only nodes with keys less than the node's key.
+P257 [-] The right subtree of a node contains only nodes with keys greater than or equal to the node's key.
+P258 [-] Both the left and right subtrees must also be binary search trees.
+P259 [-] A Complete Binary Tree (CBT) is a tree that is completely filled, with the possible exception of the bottom level, which is filled from left to right.
+P260 [-] Now given a sequence of distinct non-negative integer keys, a unique BST can be constructed if it is required that the tree must also be a CBT.  You are supposed to output the level order traversal sequence of this BST.
+P261 [-] Input Specification:
+P262 [-] Each input file contains one test case.  For each case, the first line contains a positive integer N (≤1000).  Then N distinct non-negative integer keys are given in the next line.  All the numbers in a line are separated by a space and are no greater than 2000.
+P263 [-] Output Specification:
+P264 [-] For each test case, print in one line the level order traversal sequence of the corresponding complete binary search tree.  All the numbers in a line must be separated by a space, and there must be no extra space at the end of the line.
+P265 [-] Sample Input:
+P266 [-] 10
+P267 [-] 1 2 3 4 5 6 7 8 9 0
+P268 [-] Sample Output:
+P269 [-] 6 3 8 1 5 7 9 0 2 4
+P270 [style=Heading 1] 六、图的操作（学时：12）
+P271 [-] 基本内容：
+P272 [-] 本实验分三次共12个学时，
+P273 [-] 第一次实验4学时，题目为6.1，实验目标为：熟练掌握图的深度优先和广度优先遍历方法；
+P274 [-] 第二次实验4学时，题目为6.2，实验目标为：熟练掌握用Prim算法构造最小生成树
+P275 [align=LEFT (0)] 第三次实验4学时，题目为6.3，实验目标为：掌握关键活动计算方法；
+P276 [-] 选做内容：
+P277 [align=LEFT (0)] 6.4旅游规划，实验目标为：掌握计算图中两个顶点之间的最短路径的方法。
+P278 [style=Heading 2] 6.1 图的深度和广度优先遍历（4学时）
+P279 [style=Heading 3] 6.1.1 图的深度优先遍历（20分）
+P280 [align=LEFT (0)] 给定一个无向图，输出指定顶点出发的深度优先遍历序列和广度优先遍历序列。在遍历的过程中，如果同时出现多个待访问的顶点，则优先选择编号最小的一个进行访问，
+P281 [align=LEFT (0)] 输入格式:
+P282 [align=LEFT (0)] 第一行输入三个正整数，分别表示无向图的顶点数N（1≤N≤1000，顶点从1到N编号）、边数M和指定起点编号S。接下来的M行对应M条边，每行给出两个正整数，分别是该条边的端点编号。
+P283 [align=LEFT (0)] 输出格式:
+P284 [align=LEFT (0)] 输出从S开始的深度优先遍历序列和广度遍历序列，用一个空格隔开，最后也含有一个空格。如果从S出发无法遍历到图中的所有顶点，第二行输出Non-connected。
+P285 [align=LEFT (0)] 输入样例:
+P286 [align=LEFT (0)] 5 4 2
+P287 [align=LEFT (0)] 1 2
+P288 [align=LEFT (0)] 2 3
+P289 [align=LEFT (0)] 5 2
+P290 [align=LEFT (0)] 1 3
+P291 [align=LEFT (0)] 输出样例:
+P292 [align=LEFT (0)] 2 1 3 5
+P293 [align=LEFT (0)] 2 1 3 5 
+P294 [align=LEFT (0)] Non-connected
+P295 [style=Heading 3] 6.1.2 图的广度优先遍历（25分）
+P296 [align=LEFT (0)] 请编写程序，用广度优先搜索输出给定无向图中的各个连通分量。
+注意输出顺序规定如下：
+P297 [align=LEFT (0)] 每个连通分量的输出从其中编号最小的顶点开始；
+P298 [align=LEFT (0)] 不同连通分量按其第一个顶点的编号增序输出，每个连通分量占一行；
+P299 [align=LEFT (0)] 当一个顶点有多个邻接点时，按其输入的逆序进行访问，即最后输入的邻接点，在广度优先搜索中应被最先访问输出。
+P300 [align=LEFT (0)] 输入格式：
+P301 [align=LEFT (0)] 输入首先在第一行给出图中最大顶点数量，即正整数 kMaxVertex（≤10）。
+第二行给出两个正整数，依次为当前要创建的图的顶点数 n 和边数 m（保证顶点数至少为 2 且不超过最大顶点数量）。
+第三行给出 n 个英文字母，顺序对应每个顶点的信息。
+随后 m 行，每行给出一条无向边的两个端点的编号、以及边的权重。顶点编号从 0 开始，权重（≤230）为整数。
+同行数字、字符均以一个空格分隔。
+P302 [align=LEFT (0)] 输出格式：
+P303 [align=LEFT (0)] 按照题面中规定的顺序，输出图中的连通分量每个顶点的信息。每个连通分量占一行，字符间不要有空格。
+P304 [align=LEFT (0)] 10
+P305 [align=LEFT (0)] 6 7
+P306 [align=LEFT (0)] a b c d e f
+P307 [align=LEFT (0)] 2 0 2
+P308 [align=LEFT (0)] 2 3 1
+P309 [align=LEFT (0)] 3 0 3
+P310 [align=LEFT (0)] 3 4 4
+P311 [align=LEFT (0)] 2 4 2
+P312 [align=LEFT (0)] 4 0 5
+P313 [align=LEFT (0)] 4 5 1
+P314 [align=LEFT (0)] 输出样例：
+P315 [align=LEFT (0)] aedcf
+P316 [align=LEFT (0)] b
+P317 [style=Heading 2] 6.2 最小生成树的构造Prim（15分 4学时）
+P318 [align=LEFT (0)] 某地对偏远地区实行“村村通”工程，目标是使整个地区任何两个村落间都可以实现快速交通（但不一定有直接的快速道路相连，只要互相间接通过快速路可达即可）。现得到拟修建道路的费用，现请你编写程序，计算出需修建哪几条道路，能够保证全地区畅通并且造价最低。
+P319 [align=LEFT (0)] 输入格式:
+P320 [align=LEFT (0)] 输入的第一行给出村庄数目N (1≤N≤20)和拟修建的道路数M
+P321 [align=LEFT (0)] 接下来的M行对应修建每条村庄间道路的成本，每行给出3个正整数，分别是两个村庄的编号（从1编号到N），此两村庄间道路的成本。
+P322 [align=LEFT (0)] 输出格式:
+P323 [align=LEFT (0)] 输出需修建的道路，按prim算法从编号1开始得到的顺序，输出每条路，每行输出一条道路，形式如：道路1编号,道路2编号,费用。(编号小的放前面，编号大的放后面，逗号为英文状态下的逗号)
+P324 [align=LEFT (0)] 输入样例:
+P325 [align=LEFT (0)] 4 6
+P326 [align=LEFT (0)] 1 2 1
+P327 [align=LEFT (0)] 1 3 4
+P328 [align=LEFT (0)] 1 4 1
+P329 [align=LEFT (0)] 2 3 3
+P330 [align=LEFT (0)] 2 4 2
+P331 [align=LEFT (0)] 3 4 5
+P332 [align=LEFT (0)] 输出样例:
+P333 [align=LEFT (0)] 1,2,1
+P334 [align=LEFT (0)] 1,4,1
+P335 [align=LEFT (0)] 2,3,3
+P336 [style=Heading 2] 6.3 关键活动（30分 4学时）
+P337 [-] 假定一个工程项目由一组子任务构成，子任务之间有的可以并行执行，有的必须在完成了其它一些子任务后才能执行。“任务调度”包括一组子任务、以及每个子任务可以执行所依赖的子任务集。
+P338 [-] 比如完成一个专业的所有课程学习和毕业设计可以看成一个本科生要完成的一项工程，各门课程可以看成是子任务。有些课程可以同时开设，比如英语和C程序设计，它们没有必须先修哪门的约束；有些课程则不可以同时开设，因为它们有先后的依赖关系，比如C程序设计和数据结构两门课，必须先学习前者。
+P339 [-] 但是需要注意的是，对一组子任务，并不是任意的任务调度都是一个可行的方案。比如方案中存在“子任务A依赖于子任务B，子任务B依赖于子任务C，子任务C又依赖于子任务A”，那么这三个任务哪个都不能先执行，这就是一个不可行的方案。
+P340 [-] 任务调度问题中，如果还给出了完成每个子任务需要的时间，则我们可以算出完成整个工程需要的最短时间。在这些子任务中，有些任务即使推迟几天完成，也不会影响全局的工期；但是有些任务必须准时完成，否则整个项目的工期就要因此延误，这种任务就叫“关键活动”。
+P341 [-] 请编写程序判定一个给定的工程项目的任务调度是否可行；如果该调度方案可行，则计算完成整个工程项目需要的最短时间，并输出所有的关键活动。
+P342 [-] 输入格式:
+P343 [-] 输入第1行给出两个正整数N(≤100)和M，其中N是任务交接点（即衔接相互依赖的两个子任务的节点，例如：若任务2要在任务1完成后才开始，则两任务之间必有一个交接点）的数量。交接点按1~N编号，M是子任务的数量，依次编号为1~M。随后M行，每行给出了3个正整数，分别是该任务开始和完成涉及的交接点编号以及该任务所需的时间，整数间用空格分隔。
+P344 [-] 输出格式:
+P345 [-] 如果任务调度不可行，则输出0；否则第1行输出完成整个工程项目需要的时间，第2行开始输出所有关键活动，每个关键活动占一行，按格式“V->W”输出，其中V和W为该任务开始和完成涉及的交接点编号。关键活动输出的顺序规则是：任务开始的交接点编号小者优先，起点编号相同时，与输入时任务的顺序相反。
+P346 [-] 输入样例:
+P347 [-] 7 8
+P348 [-] 1 2 4
+P349 [-] 1 3 3
+P350 [-] 2 4 5
+P351 [-] 3 4 3
+P352 [-] 4 5 1
+P353 [-] 4 6 6
+P354 [-] 5 7 5
+P355 [-] 6 7 2
+P356 [-] 输出样例:
+P357 [-] 17
+P358 [-] 1->2
+P359 [-] 2->4
+P360 [-] 4->6
+P361 [-] 6->7
+P362 [style=Heading 2] 6.4 旅游规划（25分 选做）
+P363 [align=LEFT (0)] 涉及知识点：最短路径
+P364 [align=LEFT (0)] 有了一张自驾旅游路线图，你会知道城市间的高速公路长度、以及该公路要收取的过路费。现在需要你写一个程序，帮助前来咨询的游客找一条出发地和目的地之间的最短路径。如果有若干条路径都是最短的，那么需要输出最便宜的一条路径。如果不存在路径，则提示没有路径。
+P365 [align=LEFT (0)] 输入格式:
+P366 [align=LEFT (0)] 输入说明：输入数据的第 1 行给出 4 个正整数 n、m、s、d，其中 n（2≤n≤500）是城市的个数，顺便假设城市的编号为 0~(n−1)；m 是高速公路的条数；s 是出发地的城市编号；d 是目的地的城市编号。随后的 m 行中，每行给出一条高速公路的信息，分别是：城市 1、城市 2、高速公路长度、收费额，中间用空格分开，数字均为整数且不超过 500。输入保证解的存在。
+P367 [align=LEFT (0)] 输出格式:
+P368 [align=LEFT (0)] 在一行里输出路径的长度和收费总额，数字间以空格分隔，输出结尾不能有多余空格。
+P369 [align=LEFT (0)] 输入样例:
+P370 [align=LEFT (0)] 4 5 0 3
+P371 [align=LEFT (0)] 0 1 1 20
+P372 [align=LEFT (0)] 1 3 2 30
+P373 [align=LEFT (0)] 0 3 4 10
+P374 [align=LEFT (0)] 0 2 2 20
+P375 [align=LEFT (0)] 2 3 1 20
+P376 [align=LEFT (0)] 输出样例:
+P377 [align=LEFT (0)] 3 40
+P378 [style=Heading 1] 七、内部排序算法（学时：4）
+P379 [-] 基本内容：
+P380 [-] 采用基数排序方法实现：对一组整数数据序列如53, 3, 542, 748, 14, 214, 154, 63, 616进行排序。
+P381 [-] 选做内容：
+P382 [-] 7.1 AVL树的根结点
+P383 [style=Heading 2] 7.1 AVL树的根结点（25分 3学时 选做 视频）
+P384 [-] An AVL tree is a self-balancing binary search tree.  In an AVL tree, the heights of the two child subtrees of any node differ by at most one; if at any time they differ by more than one, rebalancing is done to restore this property.  Figures 1-4 illustrate the rotation rules.
+P385 [-] Now given a sequence of insertions, you are supposed to tell the root of the resulting AVL tree.
+P386 [-] Input Specification:
+P387 [-] Each input file contains one test case.  For each case, the first line contains a positive integer N (≤20) which is the total number of keys to be inserted.  Then N distinct integer keys are given in the next line.  All the numbers in a line are separated by a space.
+P388 [-] Output Specification:
+P389 [-] For each test case, print the root of the resulting AVL tree in one line.
+P390 [-] Sample Input 1:
+P391 [-] 5
+P392 [-] 88 70 61 96 120
+P393 [-] Sample Output 1:
+P394 [-] 70
+P395 [-] Sample Input 2:
+P396 [-] 7
+P397 [-] 88 70 61 96 120 90 65
+P398 [-] Sample Output 2:
+P399 [-] 88
+P400 [style=Heading 1] 八、哈希表构造（学时：2）
+P401 [-] 基本内容：
+P402 [-] 题目为8.1，实验目标为：熟练掌握散列映射的原理；
+P403 [-] 选做内容：
+P404 [align=LEFT (0)] 8.2哈希查找的平均查找长度，实验目标为：掌握平均成功查找长度和平均失败查找长度的计算方法；
+P405 [-] 8.3整形关键字的散列映射，实验目标为：掌握整形关键字的散列映射方法；
+P406 [style=Heading 2] 8.1 电话聊天狂人（25分 2学时 浙大有慕课） 
+P407 [-] 题目描述
+P408 [-] 给定大量手机用户通话记录，找出其中通话次数最多的聊天狂人。
+P409 [-] 输入格式:
+P410 [-] 输入首先给出正整数N（≤105），为通话记录条数。随后N行，每行给出一条通话记录。简单起见，这里只列出拨出方和接收方的11位数字构成的手机号码，其中以空格分隔。
+P411 [-] 输出格式:
+P412 [-] 在一行中给出聊天狂人的手机号码及其通话次数，其间以空格分隔。如果这样的人不唯一，则输出狂人中最小的号码及其通话次数，并且附加给出并列狂人的人数。
+P413 [-] 输入样例:
+P414 [-] 4
+P415 [-] 13005711862 13588625832
+P416 [-] 13505711862 13088625832
+P417 [-] 13588625832 18087925832
+P418 [-] 15005713862 13588625832
+P419 [-] 输出样例:
+P420 [-] 13588625832 3
+P421 [style=Heading 2] 8.2 哈希查找的平均查找长度(20分 选做)
+P422 [align=LEFT (0)] 题目描述
+P423 [align=LEFT (0)] 对于给定的关键字序列，求采用哈希查找时查找成功和查找失败的平均查找长度。哈希函数：H(key) = key % K，其中K为某个不大于哈希表长M的整数。采用线性探测再散列处理冲突。
+P424 [align=LEFT (0)] 输入格式:
+P425 [align=LEFT (0)] 测试数据有多组，处理到文件尾。对于每组测试，第一行输入关键字个数n（n≤100）、表长M（n<M≤2n）和K；第二行输入n个整型关键字。
+P426 [align=LEFT (0)] 输出格式:
+P427 [align=LEFT (0)] 对于每组测试，输出查找成功和查找失败时的平均查找长度，之间以一个空格间隔，结果保留2位小数。
+P428 [align=LEFT (0)] 输入样例:
+P429 [align=LEFT (0)] 4 5 5
+P430 [align=LEFT (0)] 10 6 4 15
+P431 [align=LEFT (0)] 11 18 16
+P432 [align=LEFT (0)] 10 24 32 17 31 30 46 47 40 63 49
+P433 [align=LEFT (0)] 输出样例:
+P434 [align=LEFT (0)] 1.50 3.00
+P435 [align=LEFT (0)] 2.09 2.94
+P436 [style=Heading 2] 8.3 整形关键字的散列映射（25分 选做）
+P437 [align=LEFT (0)] 给定一系列整型关键字和素数P，用除留余数法定义的散列函数H(Key)=Key将关键字映射到长度为P的散列表中。用线性探测法解决冲突。
+P438 [align=LEFT (0)] 输入格式:
+P439 [align=LEFT (0)] 输入第一行首先给出两个正整数N（≤1000）和P（≥N的最小素数），分别为待插入的关键字总数、以及散列表的长度。第二行给出N个整型关键字。数字间以空格分隔。
+P440 [align=LEFT (0)] 输出格式:
+P441 [align=LEFT (0)] 在一行内输出每个整型关键字在散列表中的位置。数字间以空格分隔，但行末尾不得有多余空格。
+P442 [align=LEFT (0)] 输入样例:
+P443 [align=LEFT (0)] 4 5
+P444 [align=LEFT (0)] 24 15 61 88
+P445 [align=LEFT (0)] 输出样例:
+P446 [align=LEFT (0)] 4 0 1 3
+=== STYLES USED ===
+Normal: 498
+Heading 2: 27
+Normal (Web): 10
+Heading 1: 9
+Heading 3: 5

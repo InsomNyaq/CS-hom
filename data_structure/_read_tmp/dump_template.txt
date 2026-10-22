@@ -1,0 +1,47 @@
+FILE: D:\CS-hom\data_structure\lab\报告模板25级.docx
+title='' subject='' author='Windows User'
+=== SECTIONS ===
+section 0: page 7560310 x 10692130, margins L1143000 R1143000 T914400 B914400
+=== BODY ===
+P001 [style=题目样式, align=CENTER (1)] 数 据 结 构 实 验 报 告
+P002 [style=题目样式, align=CENTER (1)] 实验一 热身实验（4学时）
+P003 [style=题目样式] 姓名：                                   电子邮箱地址：
+P004 [style=题目样式] 年级专业：
+P005 [style=题目样式] 实验内容
+P006 [align=LEFT (0)] 二分查找法之过程（15分）
+P007 [align=LEFT (0)] 本题要求使用二分查找法，在给定的n个升序排列的整数中查找x，并输出查找过程中每一步的中间结果。如果数组a中的元素与x的值相同，输出相应的下标（下标从0开始）；如果没有找到，输出“Not Found”。如果输入的n个整数没有按照从小到大的顺序排列，或者出现了相同的数，则输出“Invalid Value”。
+P008 [style=题目说明样式] 代码
+P009 [style=代码样式] #include<stdio.h>
+P010 [style=代码样式] int main()
+P011 [style=代码样式] {
+P012 [style=代码样式] }
+P013 [style=题目说明样式] 运行结果：
+P014 [-] 输入数据（两组测试结果）：
+P015 [align=LEFT (0)] 第一组：
+P016 [align=LEFT (0)] 10 2
+P017 [align=LEFT (0)] 1 2 3 4 5 6 7 8 9 10
+P018 [-] 输出结果
+P019 [IMG]  
+P020 [-] 第二组：
+P021 [align=LEFT (0)] 4 5
+P022 [align=LEFT (0)] 71 74 78 100
+P023 [-] 输出结果
+P024 [IMG] 
+P025 [align=LEFT (0)] 数组元素循环右移问题（20分）
+P026 [IMG] 
+P027 [style=题目说明样式] 代码
+P028 [style=代码样式] #include<stdio.h>
+P029 [style=代码样式] int main()
+P030 [style=代码样式] {
+P031 [style=代码样式] }
+P032 [style=题目说明样式] 运行结果：
+P033 [-] 输入数据：
+P034 [align=LEFT (0)] 6 2
+P035 [align=LEFT (0)] 1 2 3 4 5 6
+P036 [-] 输出结果
+P037 [IMG]  
+=== STYLES USED ===
+Normal: 27
+代码样式: 16
+题目样式: 8
+题目说明样式: 7
