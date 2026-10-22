@@ -1,0 +1,198 @@
+=== SECTION ===
+page 7560310x10692130 margins L1143000 R1143000 T914400 B914400
+page 10692130x7560310 margins L914400 R914400 T1143000 B1143000
+page 7560310x10692130 margins L1143000 R1143000 T914400 B914400
+
+=== BODY BLOCKS ===
+[P000][Normal] 数据库系统原理实验报告
+[P001][Normal] 姓名：_______        _  学号：_____________     班级：_____________  <<<
+[P002][Normal] 实验日期：_____________                     联系方式：TEL: 1  <<<
+[P003][Normal] 实验编号：_____2____                       指导教师：____________  <<<
+[P004][Normal] 实验名称： openGauss数据库开发调试工具的使用 
+[P005][Normal]  一、实验目的
+[P006][Normal] 掌握gsql客户端工具本地连接数据库的方法;
+[P007][Normal] 了解gsql客户端工具远程连接数据库的方法;
+[P008][Normal] 掌握gsql客户端工具基本命令和元命令的使用方法；
+[P009][List Paragraph] 掌握图形化界面客户端工具Data Studio的安装及使用方法
+[P010][Normal] 二、实验概览
+[P011][Normal] 
+[P012][Normal] 三、实验环境
+[P013][Normal] ECS公网地址：ip:_
+[P014][Normal] 内网地址ip：_________  <<<
+[P015][Normal] 数据库系统：openGauss 2.0.0
+[P016][Normal] 四、实验过程：内容、步骤、结果
+[P017][List Paragraph] 切换到omm用户，以操作系统用户omm登录数据库主节点
+[P018][边框代码] 
+[P019][List Paragraph] 插入结果截图：   
+[P020][Normal] 启动数据库服务
+[P021][边框代码] 
+[P022][Normal] 插入结果截图：   
+[P023][Normal] 连接数据库postgres  port=26000
+[P024][边框代码] 
+[P025][Normal] 插入结果截图：   
+[P026][Normal] 输入help指令,查看帮助信息
+[P027][边框代码] 
+[P028][Normal] 插入结果截图：   
+[P029][Normal] 用\copyright指令查看版权信息
+[P030][边框代码] 
+[P031][Normal] 插入结果截图：   
+[P032][Normal] 查看openGauss支持的所有SQL语句
+[P033][边框代码] 
+[P034][Normal] 插入结果截图：   
+[P035][Normal] 查看CREATE DATABASE命令的详细参数
+[P036][边框代码] 
+[P037][Normal] 插入结果截图：   
+[P038][样式1] 创建数据库db_tpcc02（注意sql语句末尾的“；”gsql命令结束无“；”）
+[P039][边框代码] 
+[P040][Normal] 插入结果截图：  
+[P041][样式1] 使用\l元命令查看数据库系统的数据库列表
+[P042][边框代码] 
+[P043][Normal] 插入结果截图：  
+[P044][样式1] 
+[P045][样式1] 使用sql语句通过系统表pg_database查询数据库列表
+[P046][边框代码] 
+[P047][Normal] 插入结果截图：  
+[P048][样式1] 使用元命令切换当前连接的数据库至db_tpcc02  (注；~t~当前用户omm)
+[P049][边框代码] 
+[P050][Normal] 插入结果截图：   
+[P051][样式1] 使用 \h create schema 查看创建指定模式的内容  
+[P052][边框代码] 
+[P053][Normal] 插入结果截图：   
+[P054][样式1] 创建属于自己的模式，要求模式名用学生自己姓名的简写如“张一帆”zhyf
+[P055][边框代码] 
+[P056][Normal] 插入结果截图：   
+[P057][样式1] 用元命令查看当前数据库中的所有模式，关注新创建的模式名，属于哪一个数据库
+[P058][边框代码] 
+[P059][Normal] 插入结果截图：   
+[P060][样式1] 使用元命令退出当前数据库连接
+[P061][边框代码] 
+[P062][Normal] 插入结果截图：
+[P063][Normal] 使用文件作为命令源而不是交互式输入：(16-17小题)
+[P064][Normal] 创建文件夹/home/omm/openGauss存放文件mysql.sql
+[P065][边框代码] 
+[P066][Normal] 插入结果截图：
+[P067][Normal] 用vi创建文件＂mysql.sql”, 进入INSERT模式，
+[P068][Normal] 输入＂ select usename , usesysid , usecreatedb from pg_user;＂,存盘退出（：wq）
+[P069][边框代码]  
+[P070][样式1] 插入结果截图
+[P071][样式1] 创建数据库用户***（要求用户名是学生自己姓名的简写如“张一帆”zhyf）
+[P072][边框代码] 
+[P073][样式1] 插入结果截图
+[P074][Normal] 	创建数据库ST_DB并指定所有者为第18小题的新建用户
+[P075][边框代码] 
+[P076][Normal] 插入结果截图：   
+[P077][样式1] 给新建用户授权（修改权限）使其拥有DB_EM的sysadmin权限
+[P078][边框代码] 
+[P079][Normal] 插入结果截图：   
+[P080][Normal] 用新建用户连接DB_EM数据库
+[P081][边框代码]   
+[P082][样式1] 插入结果截图：
+[P083][样式1] 新建模式Lab2_scm；设置当前模式为Lab2_scm;显示当前模式
+[P084][边框代码] 
+[P085][Normal] 插入结果截图：   
+[P086][Normal] 删除数据库db_temp
+[P087][边框代码] 
+[P088][样式1] 插入结果截图：   
+[P089][样式1] 模拟一个小型公司MIS系统，需要在Lab2_SCM模式下给DB_EM数据库创建3个表对象：
+[P090][List Paragraph] 职级表：rank
+[P091][List Paragraph] Table "Lab2_SCM.rank"
+[P092][List Paragraph]    Column   |         Type          | Modifiers 
+[P093][List Paragraph] ------------+-----------------------+-----------
+[P094][List Paragraph]  rankid     | integer               | not null—职级ID
+[P095][List Paragraph]  rankname   | character varying(50) | not null—职级名称
+[P096][Normal]  rankremark | text                  | ----备注
+[P097][Normal] ============================================================
+[P098][List Paragraph] 部门表department
+[P099][List Paragraph]      Table "Lab2_SCM.department"
+[P100][List Paragraph]       Column      |         Type          | Modifiers 
+[P101][List Paragraph] ------------------+-----------------------+-----------
+[P102][List Paragraph]  departmentid     | integer               | not null
+[P103][List Paragraph]  departmentname   | character varying(50) | not null
+[P104][Normal]  departmentremark | text              
+[P105][Normal] ============================================================
+[P106][List Paragraph] 职员表people
+[P107][List Paragraph]                 Table " Lab2_SCM.people"
+[P108][List Paragraph]     Column     |  Type            |                Modifiers                 
+[P109][List Paragraph] ---------------+--------------------------------+--------
+[P110][List Paragraph]  peopleid      | integer                        | not null
+[P111][List Paragraph]  departmentid  | integer                        | not null
+[P112][List Paragraph]  rankid        | integer                        | not null
+[P113][List Paragraph]  peoplename    | character varying(50)          | not null
+[P114][List Paragraph]  peoplesex     | character varying(4)           | not null 
+[P115][List Paragraph]  peoplebirth   | timestamp(0) without time zone | not null
+[P116][List Paragraph]  peoplesalary  | numeric(12,2)                  | not null
+[P117][List Paragraph]  peoplephone   | character varying(20)          | not null
+[P118][List Paragraph]  peopleaddress | character varying(100)         | 
+[P119][List Paragraph]  peopleaddtime | smalldatetime                  | 
+[P120][Normal] 写出职级表：rank的建表语句：
+[P121][边框代码] 
+[P122][样式1] 写出部门表department的建表语句
+[P123][边框代码] 
+[P124][样式1] 
+[P125][样式1] 写出职员表people对象的建表语句
+[P126][边框代码] 
+[P127][样式1] 插入结果截图：
+[P128][样式1] 给数据库DB_EM的3张表插入记录：
+[P129][List Paragraph] 为职级表rank插入如下纪录：
+[P130][List Paragraph] rankid | rankname |                     rankremark             
+[P131][List Paragraph] --------+----------+--------------------------------------------
+[P132][List Paragraph]       1 | 初级     | 获得HCIA证书，具备行业项目的开发的基本水平
+[P133][List Paragraph]       2 | 中级     | 获得HCIP证书,具备横向项目独立设计的能力
+[P134][List Paragraph]       3 | 高级     | 获得HCIE相当的证书具备综合项目设计丰富经历
+[P135][List Paragraph] 
+[P136][List Paragraph] 为部门表department插入如下纪录：
+[P137][List Paragraph] departmentid | departmentname | departmentremark 
+[P138][List Paragraph] --------------+----------------+------------------
+[P139][List Paragraph]             1 | 软件部         | ......
+[P140][List Paragraph]             2 | 硬件部         | ......
+[P141][List Paragraph]             3 | 市场部         | ......
+[P142][List Paragraph]             4 | 财务部         | 企业财务结算
+[P143][List Paragraph]             5 | 人力部         | 人事管理
+[P144][List Paragraph]             6 | 品控部         | 质量检控
+[P145][List Paragraph] 
+[P146][Normal] 
+[P147][Normal] 
+[P148][List Paragraph] 为员工表people插入如下纪录：
+[P149][List Paragraph] peopleid|departmentid|rankid|peoplename | peoplesex | peoplebirth | peoplesalary | peoplephone | peopleaddress 
+[P150][List Paragraph] ----------+--------------+--------+------------+-----------+---
+[P151][List Paragraph]         1 |            1 |      1 | 赵小明     | 男        | 1970-01-01 |     50000.00 | 13893330005 | 北京
+[P152][List Paragraph]         2 |            1 |      1 | 司马相如   | 男        | 1968-02-09 |     40000.00 | 13554785452 | 成都
+[P153][List Paragraph]         3 |            1 |      1 | 周小顺     | 女        | 1975-03-09 |     25000.00 | 13256854578 | 甘肃
+[P154][List Paragraph]         4 |            1 |      1 | 钱小旦     | 女        | 1973-04-08 |     12000.00 | 13985745871 | 山东
+[P155][List Paragraph]         5 |            2 |      1 | 张世同     | 男        | 1980-05-08 |     18000.00 | 13535987412 | 安徽
+[P156][List Paragraph]         6 |            2 |      3 | 委正大     | 男        | 1978-06-08 |      9000.00 | 13845789568 | 河北
+[P157][List Paragraph]         7 |            2 |      2 | 赵有飞     | 男        | 1985-07-08 |     10500.00 | 13878562568 | 浙江
+[P158][List Paragraph]         8 |            2 |      2 | 李小强     | 男        | 1983-08-20 |      8500.00 | 13335457412 | 山西
+[P159][List Paragraph]         9 |            3 |      1 | 胡瑗瑗     | 女        | 1990-09-20 |     16500.00 | 13437100050 | 北京
+[P160][List Paragraph]        10 |            3 |      2 | 宋可睛     | 女        | 1988-12-20 |     15000.00 | 13889562354 | 北京
+[P161][List Paragraph]        11 |            3 |      3 | 肖飞       | 男        | 1995-11-11 |      9000.00 | 13385299632 | 河南
+[P162][List Paragraph]        12 |            3 |      1 | 张锐杰     | 男        | 1993-10-13 |     18000.00 | 13478545263 | 上海
+[P163][List Paragraph]        13 |            4 |      1 | 曹德旺     | 男        | 2000-12-12 |     17500.00 | 13878523695 | 深圳
+[P164][List Paragraph]        14 |            4 |      3 | 李萌       | 女        | 1998-11-22 |      9000.00 | 13698545841 | 广州
+[P165][List Paragraph]        15 |            4 |      3 | 叶子飞云   | 女        | 1994-01-22 |     11000.00 | 13558745874 | 内蒙古
+[P166][List Paragraph]        16 |            4 |      2 | 孙大勇     | 男        | 1993-02-21 |     12000.00 | 13698745214 | 南京
+[P167][List Paragraph]        17 |            5 |      2 | 吴若欣     | 女        | 1992-02-21 |     13000.00 | 13985478512 | 湖南
+[P168][List Paragraph]        18 |            5 |      1 | 刘婷       | 女        | 1995-02-21 |     13500.00 | 13778787874 | 湖北
+[P169][List Paragraph]        19 |            5 |      2 | 周海涛     | 男        | 1996-10-11 |      8000.00 | 13987455214 | 天津
+[P170][List Paragraph]        20 |            5 |      3 | 韦小宝     | 男        | 1997-09-10 |      5500.00 | 13254785965 | 宁夏
+[P171][List Paragraph]        21 |            1 |      3 | 王萌       | 女        | 1986-05-19 |      8500.00 | 13352197364 | 新疆
+[P172][List Paragraph]        22 |            2 |      1 | 陆子虹     | 女        | 1998-05-19 |      7500.00 | 13025457392 | 南京
+[P173][List Paragraph]        23 |            3 |      2 | 康军       | 男        | 1999-06-01 |      7500.00 | 13077778888 | 广西
+[P174][Normal] 
+[P175][List Paragraph] 
+[P176][List Paragraph] 
+[P177][Normal] 写出插入记录的sql语句
+[P178][边框代码] 
+[P179][Normal] 
+[P180][Normal] 插入结果截图：
+[P181][Normal] 五、问题讨论
+[P182][Normal] （讨论实验过程中遇到的问题及解决办法，分析可能的原因。同时，也可以提出改进实验方案的建议。）
+[P183][Normal] 六、结论
+[P184][Normal] （基于实验结果，总结实验的主要发现，评价实验目标是否达成。）
+[P185][Normal] 七、参考资料
+[P186][Normal] （列出在准备和完成实验过程中参考的所有文献资料、网站链接等
+
+=== HEADERS/FOOTERS ===
+
+=== STYLES USED ===
+List Paragraph, Normal, 样式1, 边框代码

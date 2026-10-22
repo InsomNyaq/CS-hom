@@ -1,0 +1,10 @@
+P121 children: ["pStyle{'val': '37'}"]
+  run rPr: [('rFonts', {'ascii': 'Consolas', 'hAnsi': 'Consolas', 'eastAsia': '宋体', 'cs': 'Consolas'})]
+P123 children: ["pStyle{'val': '37'}"]
+  run rPr: [('rFonts', {'ascii': 'Consolas', 'hAnsi': 'Consolas', 'eastAsia': '宋体', 'cs': 'Consolas'})]
+P124 children: ["pStyle{'val': '39'}", 'numPr', "ind{'left': '720', 'hanging': '360'}", 'rPr']
+  no runs
+P126 children: ["pStyle{'val': '37'}"]
+  run rPr: [('rFonts', {'ascii': 'Consolas', 'hAnsi': 'Consolas', 'eastAsia': '宋体', 'cs': 'Consolas'})]
+P178 children: ["pStyle{'val': '37'}"]
+  run rPr: [('rFonts', {'ascii': 'Consolas', 'hAnsi': 'Consolas', 'eastAsia': '宋体', 'cs': 'Consolas'})]

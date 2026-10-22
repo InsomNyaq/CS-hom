@@ -1,0 +1,197 @@
+=== STYLE DEFS ===
+Normal                 10.5pt align=JUSTIFY (3)
+Default Paragraph Font <err 'CharacterStyle' object has no attribute 'paragraph_format'>
+Normal Table           
+Balloon Text           9pt
+Footer                 9pt align=LEFT (0)
+Header                 9pt align=CENTER (1)
+页眉 Char                <err 'CharacterStyle' object has no attribute 'paragraph_format'>
+页脚 Char                <err 'CharacterStyle' object has no attribute 'paragraph_format'>
+题目样式                   9pt
+题目说明样式                 8pt B
+题目样式 Char              <err 'CharacterStyle' object has no attribute 'paragraph_format'>
+代码样式                   9pt
+题目说明样式 Char            <err 'CharacterStyle' object has no attribute 'paragraph_format'>
+代码样式 Char              <err 'CharacterStyle' object has no attribute 'paragraph_format'>
+批注框文本 Char             <err 'CharacterStyle' object has no attribute 'paragraph_format'>
+
+=== PARAGRAPHS (body xml order) ===
+P style=题目样式 align=CENTER (1) sb=None sa=None ls=None fli=None li=None
+   text='数 据 结 构 实 验 报 告'
+   run0 '数' [22pt,B]
+   run1 ' ' [22pt,B]
+   run2 '据' [22pt,B]
+   run3 ' ' [22pt,B]
+   run4 '结' [22pt,B]
+   run5 ' ' [22pt,B]
+   run6 '构' [22pt,B]
+   run7 ' ' [22pt,B]
+   run8 '实' [22pt,B]
+   run9 ' ' [22pt,B]
+   run10 '验' [22pt,B]
+   run11 ' ' [22pt,B]
+   run12 '报' [22pt,B]
+   run13 ' ' [22pt,B]
+   run14 '告' [22pt,B]
+P style=题目样式 align=CENTER (1) sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=题目样式 align=CENTER (1) sb=None sa=None ls=None fli=None li=None
+   text='实验一 热身实验（4学时）'
+   run0 '实验一 ' [16pt,B]
+   run1 '热身实验（4学时）' [16pt,B]
+P style=题目样式 align=None sb=None sa=None ls=None fli=10.5 li=None
+   text='姓名：                                   电子邮箱地址：'
+   run0 '姓名' [10.5pt]
+   run1 '：' [10.5pt]
+   run2 '                                   ' [10.5pt]
+   run3 '电子邮箱地址' [10.5pt]
+   run4 '：' [10.5pt]
+P style=题目样式 align=None sb=None sa=None ls=None fli=10.5 li=None
+   text='年级专业：'
+   run0 '年级专业' [10.5pt]
+   run1 '：' [10.5pt]
+P style=题目样式 align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=题目样式 align=None sb=None sa=None ls=None fli=None li=None
+   text='实验内容'
+   run0 '实验内容' [14pt,B]
+P style=Normal align=LEFT (0) sb=None sa=None ls=None fli=None li=None
+   text='二分查找法之过程（15分）'
+   run0 '二分查找法之过程（15分）' [B]
+P style=Normal align=LEFT (0) sb=None sa=None ls=None fli=21.0 li=None
+   text='本题要求使用二分查找法，在给定的n个升序排列的整数中查找x，并输出查找过程中每一步的中间结果。如果数组a中的元素与x的值相同，输出相应的下标（下标从0开始）；如果没有找到，输出“Not Found”。如果输入的n个整数没有按照从小到大的顺序排列，或者出现了相同的数，则输出“Invalid Value”。'
+   run0 '本题要求使用二分查找法，在给定的n个升序排列的整数中查找x，并输出查找过程中每一步的中间结果。如果数组a中的元素与x的值相同，输出相应的下标（下标从0开始）；如果没有找到，输出“Not Found”。如果输入的n个整数没有按照从小到大的顺序排列，或者出现了相同的数，则输出“Invalid Value”。' [ascii=宋体,ea=宋体,10.5pt,color=404040]
+P style=题目样式 align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=题目说明样式 align=None sb=None sa=None ls=None fli=None li=None
+   text='代码'
+   run0 '代码' [10.5pt]
+P style=代码样式 align=None sb=None sa=None ls=None fli=None li=None
+   text='#include<stdio.h>'
+   run0 '#include<stdio.h>' [10.5pt]
+P style=代码样式 align=None sb=None sa=None ls=None fli=None li=None
+   text='int main()'
+   run0 'int main()' [10.5pt]
+P style=代码样式 align=None sb=None sa=None ls=None fli=None li=None
+   text='{'
+   run0 '{' [10.5pt]
+P style=代码样式 align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=代码样式 align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=代码样式 align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=代码样式 align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=代码样式 align=None sb=None sa=None ls=None fli=None li=None
+   text='}'
+   run0 '}' [10.5pt]
+P style=Normal align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=题目说明样式 align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=题目说明样式 align=None sb=None sa=None ls=None fli=None li=None
+   text='运行结果：'
+   run0 '运行结果：' [10.5pt]
+P style=Normal align=None sb=None sa=None ls=None fli=None li=None
+   text='输入数据（两组测试结果）：'
+   run0 '输入数据（两组测试结果）：' []
+P style=Normal align=LEFT (0) sb=None sa=None ls=None fli=None li=None
+   text='第一组：'
+   run0 '第一组：' []
+P style=Normal align=LEFT (0) sb=None sa=None ls=None fli=None li=None
+   text='10 2'
+   run0 '10 2' [ascii=宋体,ea=宋体,12pt,color=404040]
+P style=Normal align=LEFT (0) sb=None sa=None ls=None fli=None li=None
+   text='1 2 3 4 5 6 7 8 9 10'
+   run0 '1 2 3 4 5 6 7 8 9 10' [ascii=宋体,ea=宋体,12pt,color=404040]
+P style=Normal align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=Normal align=None sb=None sa=None ls=None fli=None li=None
+   text='输出结果'
+   run0 '输出结果' []
+P style=Normal align=None sb=None sa=None ls=None fli=None li=None
+   text=' '
+   run0 ' ' []
+   run1 '' []
+   <has image>
+P style=Normal align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=Normal align=None sb=None sa=None ls=None fli=None li=None
+   text='第二组：'
+   run0 '第二组：' []
+P style=Normal align=LEFT (0) sb=None sa=None ls=None fli=None li=None
+   text='4 5'
+   run0 '4 5' [ascii=宋体,ea=宋体,12pt,color=404040]
+P style=Normal align=LEFT (0) sb=None sa=None ls=None fli=None li=None
+   text='71 74 78 100'
+   run0 '71 74 78 100' [ascii=宋体,ea=宋体,12pt,color=404040]
+P style=Normal align=None sb=None sa=None ls=None fli=None li=None
+   text='输出结果'
+   run0 '输出结果' []
+P style=Normal align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+   run0 '' []
+   <has image>
+P style=Normal align=LEFT (0) sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=Normal align=LEFT (0) sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=Normal align=LEFT (0) sb=None sa=None ls=None fli=None li=None
+   text='数组元素循环右移问题（20分）'
+   run0 '数组元素循环右移问题（20分）' [B]
+P style=Normal align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+   run0 '' []
+   <has image>
+P style=题目说明样式 align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=题目说明样式 align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=题目说明样式 align=None sb=None sa=None ls=None fli=None li=None
+   text='代码'
+   run0 '代码' [10.5pt]
+P style=代码样式 align=None sb=None sa=None ls=None fli=None li=None
+   text='#include<stdio.h>'
+   run0 '#include<stdio.h>' [10.5pt]
+P style=代码样式 align=None sb=None sa=None ls=None fli=None li=None
+   text='int main()'
+   run0 'int main()' [10.5pt]
+P style=代码样式 align=None sb=None sa=None ls=None fli=None li=None
+   text='{'
+   run0 '{' [10.5pt]
+P style=代码样式 align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=代码样式 align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=代码样式 align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=代码样式 align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=代码样式 align=None sb=None sa=None ls=None fli=None li=None
+   text='}'
+   run0 '}' [10.5pt]
+P style=Normal align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=题目说明样式 align=None sb=None sa=None ls=None fli=None li=None
+   text='运行结果：'
+   run0 '运行结果：' [10.5pt]
+P style=Normal align=None sb=None sa=None ls=None fli=None li=None
+   text='输入数据：'
+   run0 '输入数据：' []
+P style=Normal align=LEFT (0) sb=None sa=None ls=None fli=None li=None
+   text='6 2'
+   run0 '6 2' [ascii=宋体,ea=宋体,12pt,color=404040]
+P style=Normal align=LEFT (0) sb=None sa=None ls=None fli=None li=None
+   text='1 2 3 4 5 6'
+   run0 '1 2 3 4 5 6' [ascii=宋体,ea=宋体,12pt,color=404040]
+P style=Normal align=None sb=None sa=None ls=None fli=None li=None
+   text=''
+P style=Normal align=None sb=None sa=None ls=None fli=None li=None
+   text='输出结果'
+   run0 '输出结果' []
+P style=Normal align=None sb=None sa=None ls=None fli=None li=None
+   text=' '
+   run0 ' ' []
+   run1 '' []
+   <has image>

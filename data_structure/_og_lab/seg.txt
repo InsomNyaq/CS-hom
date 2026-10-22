@@ -1,0 +1,5 @@
+t>sysadmin权限</w:t></w:r></w:p>
+<w:p w14:paraId="6B558592"><w:pPr><w:pStyle w:val="37"/></w:pPr><w:r><w:rPr><w:rFonts w:ascii="Consolas" w:hAnsi="Consolas" w:eastAsia="宋体" w:cs="Consolas"/></w:rPr><w:t>ALTER USER zhy SYSADMIN;</w:t></w:r></w:p>
+<w:p w14:paraId="4A966372"><w:pPr><w:rPr><w:rFonts w:eastAsia="楷体"/><w:b/><w:bCs/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:eastAsia="楷体"/><w:b/><w:bCs/></w:rPr><w:t xml:space="preserve">插入结果截图：   </w:t></w:r></w:p>
+<w:p w14:paraId="28295ABD"><w:pPr><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr><w:rPr><w:rFonts w:eastAsia="楷体"/><w:b/><w:bCs/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:eastAsia="楷体"/><w:b/><w:bCs/></w:rPr><w:t>用新建用户连接DB_EM数据库</w:t></w:r></w:p>
+<w:p w14:paraId="2AA624F0"><w:pPr><w:pStyle w:val="37"/></w:pPr><w:r><w:rPr><w:rFonts w:ascii="Consolas" w:hAnsi="Consolas" w:eastAsia="宋体" w:cs="Consolas"/></w:rPr><w:t>gsql

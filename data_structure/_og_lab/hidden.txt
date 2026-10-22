@@ -1,0 +1,5 @@
+drawing len=1 text='' parent=r
+drawing len=1 text='' parent=Choice
+txbxContent len=1 text='' parent=txbx
+pict len=1 text='' parent=Fallback
+txbxContent len=1 text='' parent=textbox
