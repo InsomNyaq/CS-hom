@@ -43,6 +43,7 @@ Node * interLink(Node* l1, Node* l2){
         }
         p = p->next;
     }
+    tail->next = NULL;
     return head;
 }
 
@@ -85,8 +86,7 @@ int main(){
 
     Node * s3 = interLink(s1, s2);
     printLink(s3);
-    freeLink(s1);
-    freeLink(s2);
+    
     freeLink(s3);
 
     return 0;
