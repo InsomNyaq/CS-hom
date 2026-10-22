@@ -25,33 +25,24 @@ Node * createLink(){
     return head;
 }
 
-//merge two links
-Node * mergeLink(Node* L1, Node* L2){
-    Node * p = L1->next;
-    Node * q = L2->next;
-
+//create a intersection link of L1 and L2
+Node * interLink(Node* l1, Node* l2){
     Node * head = malloc(sizeof(Node));
     head->next = NULL;
     Node * tail = head;
-    
-    while(p != NULL && q !=NULL){
-        if(p->data <= q->data){
+
+    Node * p = l1->next;
+    Node * q = l2->next;
+
+    while(p != NULL){
+        if (p->data == q->data){
             tail->next = p;
-            p = p->next;
-        }else{
-            tail->next = q;
+            tail = p;
             q = q->next;
+            p = p->next;
         }
-
-        tail = tail->next;
+        p = p->next;
     }
-
-    if (p != NULL){
-        tail->next = p;
-    }else{
-        tail->next = q;
-    }
-
     return head;
 }
 
@@ -77,8 +68,26 @@ void printLink(Node * L){
     printf("\n");
 }
 
-int main(){
+void freeLink(Node * head){
+    if(head == NULL) return;
 
+    Node * p;
+    while(head != NULL){
+        p = head;
+        head = head ->next;
+        free(p);
+    }
+}
+
+int main(){
+    Node * s1 = createLink();
+    Node * s2 = createLink();
+
+    Node * s3 = interLink(s1, s2);
+    printLink(s3);
+    freeLink(s1);
+    freeLink(s2);
+    freeLink(s3);
 
     return 0;
 }
