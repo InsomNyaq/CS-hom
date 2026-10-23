@@ -1,5 +1,3 @@
-package Java_class.java_lab.lab01;
-
 public class Person {
     private int age = 0;
     private String name = "noname";
