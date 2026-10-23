@@ -39,3 +39,6 @@ build/
 .idea/
 .DS_Store
 Thumbs.db
+
+# 本机相关的 VS Code 设置（编译器路径因机器而异，不要提交）
+.vscode/settings.json
